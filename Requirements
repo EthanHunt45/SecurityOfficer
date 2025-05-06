@@ -1,0 +1,11 @@
+Python 3.12.0 version is the best option for using all libraries together.
+
+opencv-python
+mediapipe
+pandas
+tensorflow
+numpy
+scikit-learn
+ultralytics
+
+python gesture_recognition/src/data_collection/collect_gesture.py --gesture Right_Hand_Threat_Sign --samples 100 --seq_len 30 --output_dir gesture_recognition/data/raw

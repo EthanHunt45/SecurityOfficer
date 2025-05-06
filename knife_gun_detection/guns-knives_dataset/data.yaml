@@ -1,0 +1,5 @@
+train: /Users/erinc/GitHub/SecurityOfficer/knife_gun_detection/guns-knives_dataset/train/images
+val:   /Users/erinc/GitHub/SecurityOfficer/knife_gun_detection/guns-knives_dataset/validation/images
+test:  /Users/erinc/GitHub/SecurityOfficer/knife_gun_detection/guns-knives_dataset/test/images
+nc: 2
+names: ['knife','gun']
