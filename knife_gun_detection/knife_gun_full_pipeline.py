@@ -5,6 +5,8 @@ import matplotlib.pyplot as plt
 import torch
 from ultralytics import YOLO
 
+from knife_gun_detection.detector import camera_inference
+
 # -------------------------------------------------------------------
 # 0) DEVICE AYARI: MPS (GPU) varsa ona, yoksa CPU’ya düş
 # -------------------------------------------------------------------
@@ -96,3 +98,4 @@ if __name__ == '__main__':
     train_model(data_yaml)
     plot_training_metrics()
     best_weights = os.path.join('runs','train','weapon-det','weights','best.pt')
+

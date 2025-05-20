@@ -2,17 +2,17 @@ import cv2
 import torch
 from ultralytics import YOLO
 
-device = 'cuda' if torch.cuda.is_available() else 'cpu'
-print(f"Using device: {device}")
-print(torch.cuda.get_device_name(0) if device == 'cuda' else 'CUDA not available')
-
-'''
 # -------------------------------------------------------------------
 # 0) DEVICE AYARI: MPS (GPU) varsa ona, yoksa CPU’ya düş
 # -------------------------------------------------------------------
 device = 'mps' if torch.backends.mps.is_available() else 'cpu'
 print(f"Using device: {device}")
 print(torch.backends.mps.is_available())
+
+'''
+device = 'cuda' if torch.cuda.is_available() else 'cpu'
+print(f"Using device: {device}")
+print(torch.cuda.get_device_name(0) if device == 'cuda' else 'CUDA not available')
 '''
 
 # -------------------------------------------------------------------
@@ -49,3 +49,9 @@ def camera_inference(weights, conf_thres=0.25):
 
     cap.release()
     cv2.destroyAllWindows()
+
+if __name__ == '__main__':
+    best_weights = '/Users/erinc/GitHub/SecurityOfficer/knife_gun_detection/runs/weapon-det/weights/best.pt'
+    camera_inference(best_weights)
+
+# python inputDetector.py -w /Users/erinc/GitHub/SecurityOfficer/knife_gun_detection/runs/weapon-det/weights/best.pt -i eli-silahli-adam-serbest-2241125_amp.jpg
